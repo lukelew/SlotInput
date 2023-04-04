@@ -2,13 +2,14 @@
  * Author  Luke.Lu
  * Date  2023-03-24 10:28:06
  * LastEditors  Luke.Lu
- * LastEditTime  2023-04-04 16:56:21
+ * LastEditTime  2023-04-04 17:52:04
  * Description
  *
  */
 import { Button, Select } from 'antd';
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './index.module.less';
+import devStyles from './dev.module.less';
 import _ from 'lodash';
 const { Option } = Select;
 
@@ -231,6 +232,9 @@ const SlotInput = (props) => {
     selection.addRange(range);
   };
 
+  const inputHandler = (e) => {
+    // console.log('e :>> ', e);
+  };
   const PasteHandler = (e) => {
     e.preventDefault();
 
@@ -317,7 +321,8 @@ const SlotInput = (props) => {
         // TODO: 增加占位提示
         // placeholder={props.placeholder || '请输入槽位'}
         suppressContentEditableWarning={true}
-        onKeyUp={keyUpHandler}
+        // onKeyUp={keyUpHandler}
+        onInput={inputHandler}
         onCompositionStart={compositionStartHandler}
         onCompositionEnd={compositionEndHandler}
         onBlur={() => {
@@ -349,6 +354,28 @@ const SlotInput = (props) => {
         })}
       <p className={styles.inputTip}>输入&quot;空格+@&quot;激活槽位选择</p>
 
+      <div className={devStyles.toolList}>
+        <ul>
+          <li>
+            <Button
+              onClick={() => {
+                console.log(rangeSaver.current);
+              }}
+            >
+              rangeSaver.current
+            </Button>
+          </li>
+          <li>
+            <Button
+              onClick={() => {
+                console.log(window.getSelection().getRangeAt(0));
+              }}
+            >
+              windowRange
+            </Button>
+          </li>
+        </ul>
+      </div>
       {slotSelectorVisible && (
         <div
           className={styles.selectOverlay}
