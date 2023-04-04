@@ -1,0 +1,41 @@
+// 通用颜色
+@primary-color: #32b6b1;
+@main-title-gray-color: #404040;
+@main-content-gray-color: #666;
+// cubic-bezier(1, 0.04, 0.67, 0.5)
+// 通用布局
+@header-height: 66px;
+
+.areaLayout {
+  padding: 100px 0 120px 0;
+}
+.areaTitle {
+  text-align: center;
+  font-size: 40px;
+  font-weight: normal;
+  margin: 0 0 60px 0;
+}
+.commonMainBtn {
+  display: block;
+  border: none;
+  color: #fff;
+  transition: 0.3s;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%);
+  margin: 72px auto;
+  width: 210px;
+  height: 44px;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  strong {
+    font-weight: normal;
+    padding: 0 16px 0 0;
+    color: #fff;
+  }
+
+  &:hover {
+    background-position: right center;
+  }
+}

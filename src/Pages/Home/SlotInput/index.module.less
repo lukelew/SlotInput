@@ -1,0 +1,93 @@
+.wrapper {
+  background: rgba(0, 255, 0, 0.1);
+  padding: 40px;
+}
+.RCinput {
+  min-height: 22px;
+  padding: 4px 11px;
+  border: 1px #d9d9d9 solid;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: #fff;
+  margin: 16px 0;
+  font-size: 14px;
+
+  &:focus {
+    border-color: #36bfcf;
+    border-right-width: 1px !important;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(19, 170, 194, 0.2);
+  }
+
+  .textSpan {
+    padding: 0 2px 0 0;
+  }
+
+  &.disable {
+    background: #eee;
+    cursor: not-allowed;
+    user-select: none;
+
+    .slotSpan {
+      cursor: not-allowed;
+      filter: grayscale(1);
+      &:hover {
+        background: #36c0cf37;
+      }
+
+      .closeIcon {
+        cursor: not-allowed;
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .slotSpan {
+    display: inline-block;
+    padding: 1px 6px 1px 8px;
+    margin: 0 4px;
+    display: inline-block;
+    background: #36c0cf37;
+    color: @primary-color;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: fadeout(@primary-color, 65%);
+    }
+
+    .closeIcon {
+      display: inline-block;
+      padding: 0 0 0 8px;
+      font-style: normal;
+      cursor: pointer;
+
+      &::after {
+        content: 'X';
+      }
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .caretSpan {
+    display: inline-block;
+  }
+}
+.selectOverlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 600;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.buttonBox {
+  button {
+    margin: 0 16px 0 0;
+  }
+}
